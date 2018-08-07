@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+
+                    <a href="/sendrequest">Send Request</a>
                 </div>
             </div>
         </div>
