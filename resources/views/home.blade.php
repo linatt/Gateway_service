@@ -16,7 +16,7 @@
 
             You are logged in!
 
-            <a href="/sendrequest">Send Request</a>
+            <a href="/sendrequest?token={{$token}}">Send Request</a>
 
             <div class="row">
               <passport-clients></passport-clients>
