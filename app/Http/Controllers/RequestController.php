@@ -25,8 +25,8 @@ class RequestController extends Controller
   */
   public function sendToA()
   {
-    $client = new Client(); //GuzzleHttp\Client
-    $result = $client->get('http://a-service.homestead/api/toB');
+    $client = new Client(array( 'curl' => array( CURLOPT_SSL_VERIFYPEER => false))); //GuzzleHttp\Client
+    $result = $client->get('https://a-service.homestead/api/toB');
     return $result;
   }
 }

@@ -24,3 +24,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sendrequest', 'RequestController@sendToA');
+
+Route::get('/httpbasic', function () {
+    // Only authenticated users may enter...
+    return 'Hallo Welt!';
+})->middleware('auth.basic');
