@@ -14,9 +14,22 @@
               </div>
             @endif
 
-            You are logged in!
+            You are logged in! <br><br><br>
 
-            <a href="/sendrequest?token={{$token}}">Send Request</a>
+            JWT: {{$token}} <br><br>
+            PASETO: {{$paseto_token}} <br><br>
+
+            @if ($token)
+              <a href="/sendrequest?token={{$token}}">Send JWT-Request</a> <br>
+            @endif
+
+            @if ($paseto_token)
+              <a href="/sendpasetorequest?paseto_token={{$paseto_token}}">Send PASETO-Request</a> <br>
+            @endif
+
+
+
+
 
             <div class="row">
               <passport-clients></passport-clients>

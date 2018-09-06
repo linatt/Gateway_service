@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sendrequest', 'RequestController@sendRequestToRegistry');
+Route::get('/sendpasetorequest', 'RequestController@sendPasetoRequestToRegistry');
 
 Route::get('/httpbasic', function () {
     // Only authenticated users may enter...

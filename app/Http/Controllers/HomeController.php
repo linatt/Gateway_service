@@ -25,6 +25,7 @@ class HomeController extends Controller
     {
 
       $token = $request->get('token');
-        return view('home', ['token' => $token]);
+      $paseto_token = $request->get('paseto_token');
+        return view('home', ['token' => $token, 'paseto_token' => $paseto_token]);
     }
 }
