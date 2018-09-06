@@ -30,7 +30,7 @@ $client = new Client(array( 'curl' => array( CURLOPT_SSL_VERIFYPEER => false)));
 
 if (!is_null($token)) {
 
-$serviceLocation = $client->get('http://registrydb.homestead/api/services/' . $requestedService)->getBody()->read(256);
+$serviceLocation = $client->get('https://registrydb.homestead/api/services/' . $requestedService)->getBody()->read(256);
 $result = $client->post('https://' . $serviceLocation . '/api/toB', ['json' => ['token' => $token]])->getBody()->read(128);
 
 }
@@ -55,7 +55,7 @@ if (!is_null($paseto_token)) {
     'Accept'        => 'application/json',
 ];
 
-$serviceLocation = $client->get('http://registrydb.homestead/api/services/' . $requestedService)->getBody()->read(256);
+$serviceLocation = $client->get('https://registrydb.homestead/api/services/' . $requestedService)->getBody()->read(256);
 $result = $client->post('https://' . $serviceLocation . '/paseto_api/toB', [
         'headers' => $headers
     ])->getBody()->read(128);
